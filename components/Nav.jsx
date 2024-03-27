@@ -10,9 +10,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navigation = [
-  { name: "หน้าแรก ", href: "#", current: true },
-  { name: "เกี่ยวกับเรา ", href: "#", current: false },
-  { name: "ผลงานของเรา", href: "#", current: false },
+  { name: "หน้าแรก ", href: "/", current: true },
+  { name: "เกี่ยวกับเรา ", href: "/about", current: false },
+  { name: "ผลงานของเรา", href: "/products", current: false },
   { name: "ความรู้ก่อสร้าง", href: "#", current: false },
   { name: "ติดต่อเรา", href: "#", current: false },
 ];
@@ -26,7 +26,7 @@ export function Nav() {
     <Disclosure as="nav" >
       {({ open }) => (
         <>
-          <div className="  hidden   xl:grid grid-cols-3 items-center text-center border-b-2 border-slate-200 pb-2">
+          <div className="  hidden   sm:grid grid-cols-3 items-center text-center border-b-2 border-slate-200 pb-2">
             <div className="flex justify-center">
               <div className="flex items-center">
                 <PhoneIcon className="h-10 w-10 text-[#5B5D12] " />

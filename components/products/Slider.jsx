@@ -32,11 +32,11 @@ const slideImages = [
 
 export default function Slider ()  {
     return (
-      <div className="slide-container ">
+      <div className="slide-container   lg:mx-48">
         <Slide>
          {slideImages.map((slideImage, index)=> (
             <div key={index}>
-              <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}  className='h-48 sm:h-[800px]' >
+              <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}  className='h-48 sm:h-[600px]' >
               </div>
             </div>
           ))} 
