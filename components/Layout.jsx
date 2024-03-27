@@ -1,16 +1,15 @@
 import React, { Children } from 'react'
-import Nav from './Nav'
+
 import Footer from './Footer'
 import Link from "next/link";
 import Image from 'next/image'
 import Header from './header';
+import { Nav } from './Nav';
 export default function Layout(props) {
   return (
    <>
     
-    <header>
-        <Header/>
-    </header>
+
 
     
     <nav>
@@ -18,7 +17,7 @@ export default function Layout(props) {
     </nav>
     
 
-    <div className=' mx-20'>
+    <div >
         {props.children}
     </div>
     
@@ -27,9 +26,7 @@ export default function Layout(props) {
         <Footer/>
     </footer>
     
-    <nav className='mb-10'>
-        <Nav/>
-    </nav>
+
    
    
    </>

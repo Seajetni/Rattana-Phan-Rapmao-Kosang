@@ -13,88 +13,104 @@ export default function Home() {
     e.preventDefault();
     // Handle form submission logic here
     // For example, you can send the form data to a server
-    console.log('Form submitted:', { name, tel, message, address });
+    console.log("Form submitted:", { name, tel, message, address });
   };
   const handleClear = () => {
     // Clear all form fields
-    setName('');
-    setTel('');
-    setMessage('');
-    setAddress('');
+    setName("");
+    setTel("");
+    setMessage("");
+    setAddress("");
   };
 
   return (
     <Layout>
       <Slider />
 
-      <div className="flex   justify-around  mx-40 ">
-        <div className="  border-4 border-yellow-500  h-full items-center justify-center flex">
-        <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/xyUmcRkQthk?si=w45_EpGk5gTNWh-2"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
+      <section className="bg-gray-100">
+        <div className="mx-auto  px-4 py-16 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+            <div className="lg:col-span-2 lg:py-12">
+              <div className="">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/FvOpPeKSf_4?si=CscrQx_jfApy1Bb8"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+              <form action="#" className="space-y-4">
+                <div>
+                  <label className="sr-only" htmlFor="name">
+                    Name
+                  </label>
+                  <input
+                    className="w-full rounded-lg  p-3 text-sm border-[#A8741A] outline-none focus:border-2 focus:ring-0"
+                    placeholder="Name"
+                    type="text"
+                    id="name"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="sr-only" htmlFor="email">
+                      Email
+                    </label>
+                    <input
+                      className="w-full rounded-lg  p-3 text-sm border-[#A8741A] outline-none focus:border-2 focus:ring-0"
+                      placeholder="Email address"
+                      type="email"
+                      id="email"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="sr-only" htmlFor="phone">
+                      Phone
+                    </label>
+                    <input
+                      className="w-full rounded-lg  p-3 text-sm border-[#A8741A] outline-none focus:border-2 focus:ring-0"
+                      placeholder="Phone Number"
+                      type="tel"
+                      id="phone"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="sr-only" htmlFor="message">
+                    Message
+                  </label>
+
+                  <textarea
+                    className="w-full rounded-lg  p-3 text-sm  border-[#A8741A] outline-none focus:border-2 focus:ring-0  "
+                    placeholder="Message"
+                    rows="8"
+                    id="message"
+                  ></textarea>
+                </div>
+
+                <div className="mt-4">
+                  <button
+                    type="submit"
+                    className="inline-block w-full rounded-lg bg-[#A8741A] px-5 py-3 font-medium text-white sm:w-auto"
+                  >
+                    Send Enquiry
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div className=" flex    border border-slate-300  p-10 rounded-3xl  text-[#ffd900] ml-10   w-full items-center justify-center">
-        <form onSubmit={handleSubmit} className="flex flex-col h-full w-full ">
-      <h2 className="border-4 p-2 ml-3 border-slate-300 w-40 font-bold ">Contact form</h2>
-
-      <div className="flex justify-between  ">
-        <label htmlFor="name" className="border-4 px-1 py-2 border-slate-300 w-full my-2 ml-3">ชื่อ-นามสกุลผู้ติดต่อ</label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="กรอกชื่อและนามสกุล"
-          className="border-4 p-2 border-slate-300 w-full my-2 mx-3 "
-        />
-      </div>
-
-      <div className="flex justify-between ">
-        <label htmlFor="tel" className="border-4 px-1 py-2 border-slate-300 w-full my-2 ml-3">เบอร์โทร</label>
-        <input
-          type="text"
-          value={tel}
-          onChange={(e) => setTel(e.target.value)}
-          placeholder="กรอกหมายเลขโทรศัพท์"
-          className="border-4 p-2 border-slate-300 w-full my-2 mx-3 "
-        />
-      </div>
-
-      <div className="flex justify-between ">
-        <label htmlFor="message" className="border-4 p-2 border-slate-300 w-full my-2 mx-3 ">เรื่องที่ต้องการติดต่อ</label>
-        <input
-          type="text"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="กรอกเรื่องที่ต้องการติดต่อ"
-          className="border-4 p-2 border-slate-300 w-full my-2 mx-3 "
-        />
-      </div>
-
-      <div className="flex justify-between ">
-        <label htmlFor="address" className="border-4 p-2 border-slate-300 w-full my-2 mx-3 ">สถานที่ที่ต้องการ</label>
-        <input
-          type="text"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          placeholder="กรอกสถานที่ที่ต้องการ"
-          className="border-4 p-2 border-slate-300 w-full my-2 mx-3 "
-        />
-      </div>
-
-      <div className="flex justify-between ">
-        <button type="submit" className="bg-[#ffd900] hover:bg-yellow-400 text-white font-bold py-2 px-4 border-t-4 border-l-4 border-yellow-400 hover:border-yellow-500 rounded">ส่งอีเมลล์</button>
-        <button onClick={handleClear} className="bg-[#ffd900] hover:bg-yellow-400 text-white font-bold py-2 px-4 border-t-4 border-l-4 border-yellow-400 hover:border-yellow-500 rounded">ล้างข้อมูล</button>
-      </div>
-    </form>
-        </div>
-      </div>
+      </section>
     </Layout>
   );
 }
