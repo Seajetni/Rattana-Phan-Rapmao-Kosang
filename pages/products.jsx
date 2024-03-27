@@ -3,16 +3,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Slider from "@/components/products/Slider";
-export default function products() {
+
+export default function Products() {
   const [startIndex, setStartIndex] = useState(0);
 
-  const handleForward = () => {
-    setStartIndex((prevIndex) => Math.min(prevIndex + 5, content.length - 1));
-  };
-
-  const handleRewind = () => {
-    setStartIndex((prevIndex) => Math.max(prevIndex - 5, 0));
-  };
 
   const content = [
     {
