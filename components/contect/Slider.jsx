@@ -19,7 +19,8 @@ export default function Slider ()  {
     return (
         <Carousel transition={{ duration: 2 }} className="rounded-xl h-48 sm:h-[600px]" autoplay='true' loop='true'>
             {slider.map((item , index) => (
-              <Image
+              <Image 
+              key={index}
               src={item.img}
               width={`${500000}`}
               height={100}
