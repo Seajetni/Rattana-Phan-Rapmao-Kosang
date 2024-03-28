@@ -140,7 +140,13 @@ export default function Products() {
     },
   ];
   return (
-    <Layout className="mt-10 w-full h-full">
+    <Layout className="mt-10 w-full h-full ">
+
+      <div className=" flex justify-center my-10">
+      <h1 className="inline-block w-full rounded-lg  px-5 py-3 text-[#A8741A] font-medium  sm:w-auto text-2xl">ความรู้ก่อสร้าง</h1>
+      </div>
+      
+
 
       <Slider />
 
@@ -150,7 +156,7 @@ export default function Products() {
             {content.slice(startIndex, startIndex + 15).map((item, index) => (
               <li key={index}>
                 <Link
-                  className="lg:flex  bg-white rounded-xl mb-2 h-[250px]"
+                  className="lg:flex  bg-white text-[#A8741A] rounded-xl mb-2 h-[250px]"
                   href={"/"}
                 >
                   <Image

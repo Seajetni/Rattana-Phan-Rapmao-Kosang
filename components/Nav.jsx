@@ -134,7 +134,7 @@ export function Nav() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? " " : "  ",
+                          item.current ? "text-white bg-[#A8741A] rounded-lg" : "  ",
                           " px-3 py-2 text-lg transition-colors duration-300 border-b-2 border-transparent hover:text-[#5B5D12] hover:border-yellow-600 "
                         )}
                         aria-current={item.current ? "page" : undefined}

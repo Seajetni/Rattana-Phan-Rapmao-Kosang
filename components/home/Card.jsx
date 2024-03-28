@@ -9,17 +9,24 @@ export default function Card() {
       details:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?",
       img: "https://4kwallpapers.com/images/walls/thumbs_3t/15823.jpg",
+    },   {
+      id: "1",
+      name: "เกี่ยวกับเรา",
+      details:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?",
+      img: "https://4kwallpapers.com/images/walls/thumbs_3t/15823.jpg",
     },
+
   ];
 
   return (
-    <div className="flex justify-center">
-      <ul className="grid-cols-1   grid">
+    <div className="flex justify-center  my-10 sm:mx-10">
+      <ul className="grid-cols-1    grid sm:grid-cols-2">
         {hit.map((item, index) => (
           <li key={index} className=" my-1 mx-2 ">
             <Link
-              href="/travel"
-              className="group  h-full relative block bg-black m-1 rounded-3xl"
+              href="/products"
+              className="group  h-full relative block bg-black m-1 rounded-3xl "
             >
               <Image
                 width={1000}
