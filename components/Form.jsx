@@ -82,7 +82,7 @@ export default function Form({ color, label }) {
       
 
               <div className="w-full flex">
-                <label htmlFor="เรื่องที่ต้องการติดต่อ" className="hidden sm:w-1/5 mr-20 " >เรื่องที่ต้องการติดต่อ</label>
+                <label htmlFor="เรื่องที่ต้องการติดต่อ" className="hidden sm:w-1/5 sm:flex  mr-20 " >เรื่องที่ต้องการติดต่อ</label>
                 <Textarea
                   label="เรื่องที่ต้องการติดต่อ"
                   color="amber"
@@ -97,7 +97,7 @@ export default function Form({ color, label }) {
                     type="submit"
                     className="inline-block w-full rounded-lg bg-[#FFA405] px-5 py-3 font-medium text-white sm:w-auto"
                   >
-                    ส่งอีกเมงล์ 
+                    ส่งอีเมล 
                   </button>
                 </div>
                 <div className="mt-4">
