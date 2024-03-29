@@ -151,29 +151,16 @@ export default function Product() {
         return false; // Return false if running on the server-side
     }
     
-    let transitions;
-
-    if (typeof window !== 'undefined' && isMobileDevice()) {
-        transitions = useTransition(
-            content.slice(startIndex, startIndex + itemsPerPage), // รายการที่ต้องการแสดงในหน้านี้
-            {
-                trail: 400, // เวลาในการแสดงผลรายการต่อๆกัน
-                from: { opacity: 0, transform: 'translateY(100px)' },
-                enter: { opacity: 1, transform: 'translateY(0px)' },
-                config: config.slow,
-            }
-        );
-    } else {
-        transitions = useTransition(
-            content.slice(startIndex, startIndex + itemsPerPage), // รายการที่ต้องการแสดงในหน้านี้
-            {
-                trail: 400, // เวลาในการแสดงผลรายการต่อๆกัน
-                from: { opacity: 0, transform: 'translateX(300px)' },
-                enter: { opacity: 1, transform: 'translateX(0px)' },
-                config: config.slow,
-            }
-        );
-    }
+    let transitions = useTransition(
+      content.slice(startIndex, startIndex + itemsPerPage),
+      {
+        trail: 400,
+        from: { opacity: 0, transform: 'translateY(300px)' }, // Adjusted transform
+        enter: { opacity: 1, transform: 'translateY(0px)' },
+        config: config.slow,
+      }
+    );
+    
     
     
     
