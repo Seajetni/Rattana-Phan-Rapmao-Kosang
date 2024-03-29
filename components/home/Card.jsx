@@ -9,19 +9,13 @@ export default function Card() {
       details:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?",
       img: "https://4kwallpapers.com/images/walls/thumbs_3t/15823.jpg",
-    },   {
-      id: "1",
-      name: "เกี่ยวกับเรา",
-      details:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?",
-      img: "https://4kwallpapers.com/images/walls/thumbs_3t/15823.jpg",
-    },
+    }, 
 
   ];
 
   return (
     <div className="flex justify-center  my-10 sm:mx-10">
-      <ul className="grid-cols-1    grid sm:grid-cols-2">
+      <ul className="grid-cols-1   ">
         {hit.map((item, index) => (
           <li key={index} className=" my-1 mx-2 ">
             <Link
@@ -29,7 +23,7 @@ export default function Card() {
               className="group  h-full relative block bg-black m-1 rounded-3xl "
             >
               <Image
-                width={1000}
+                width={`${10000000}`}
                 height={100}
                 alt={item.name}
                 src={item.img}
@@ -45,10 +39,10 @@ export default function Card() {
                   {item.name}
                 </p>
                 
-                <div className=" text-end  relative items-end w-full flex flex-col  sm:top-64 lg:top-72  group-hover:top-0 ">
+                <div className=" text-end  relative   items-end w-full flex flex-col  bottom-14 lg:bottom-16  group-hover:top-0 ">
                   <p
        
-                    className=" rounded-lg bg-[#A8741A] px-5 py-3 font-medium text-white sm:w-auto "
+                    className=" rounded-lg bg-[#FFA405] px-5 py-3 font-medium text-white sm:w-auto "
                   >
                     รายละเอียด
                   </p>

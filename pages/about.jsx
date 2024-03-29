@@ -1,12 +1,26 @@
-import Slider from "@/components/about/Slider";
+
 import Layout from "@/components/Layout";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Slider from "@/components/Slider";
 
 export default function about() {
 
-  const ทำไมต้องเชี่ยวชาญแนว = [
+  const slider = [
+    {
+       img: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+    },
+    {
+      img: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+   },
+   {
+     img: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+   },
+
+]
+
+  const content = [
     {
       id: "1",
       img: "/1.png",
@@ -46,7 +60,7 @@ export default function about() {
   return (
     <Layout>
       <div  className="flex justify-center  mt-10">
-        <h1 className=" text-2xl ">เกี่ยวกับเรา</h1>
+        <h1 className=" text-2xl text-[#A8741A]">เกี่ยวกับเรา</h1>
       </div>
 
       <div className=" mx-10 sm:mx-20 my-10">
@@ -64,16 +78,16 @@ export default function about() {
         </p>
       </div>
 
-      <Slider />
+      <Slider slider={slider} />
 
       <div className="">
         <div>
-          {ทำไมต้องเชี่ยวชาญแนว.map((item, index) => (
+          {content.map((item, index) => (
             <div key={index} className="mx-auto max-w-screen-xl px-4 py-8  ">
               <div className="  grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16  ">
                 <div
                   className={`   shadow-2xl  relative h-64 overflow-hidden  rounded-3xl ${
-                    index % 2 === 1 ? "" : "lg:order-last"
+                    index % 2 === 1 ? "" : "lg:order-last "
                   } sm:h-80 lg:h-full`}
                 >
                <iframe
@@ -85,9 +99,19 @@ export default function about() {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
-        className="w-full h-full"
+        className={`w-full h-full ${ index % 2 === 1 ? "" : "hidden"}`}
       ></iframe>
+      <div className=" flex justify-center items-center h-full w-full">
+        <Image
+        width={`${100000}`}
+        height={100}
+        src={item.img}
+        alt={item.name}
+        className={`w-full h-full  object-cover ${ index % 2 === 1 ? "hidden" : ""}`} />
+      </div>
                 </div>
+
+                
 
                 <div className="lg:py-24">
                   <h3 className="text-2xl  font-semibold sm:text-2xl text-[#A8741A]">

@@ -13,8 +13,8 @@ const navigation = [
   { name: "หน้าแรก ", href: "/", current: true },
   { name: "เกี่ยวกับเรา ", href: "/about", current: false },
   { name: "ผลงานของเรา", href: "/products", current: false },
-  { name: "ความรู้ก่อสร้าง", href: "#", current: false },
-  { name: "ติดต่อเรา", href: "#", current: false },
+  { name: "ความรู้ก่อสร้าง", href: "/knowhow", current: false },
+  { name: "ติดต่อเรา", href: "/contect", current: false },
 ];
 
 function classNames(...classes) {
@@ -41,8 +41,9 @@ export function Nav() {
               <Image
                 src={"/logo.png"}
                 width={100}
-                height={50}
+                height={100}
                 alt="รัตนพรรณรับเหมาก่อสร้าง"
+                style={{ width: "auto", height: "auto" }}
               />
             </div>
 
@@ -106,9 +107,10 @@ export function Nav() {
             <div className="flex justify-center sm:hidden">
               <Image
                 src={"/logo.png"}
-                width={70}
+                width={50}
                 height={50}
                 alt="รัตนพรรณรับเหมาก่อสร้าง"
+                style={{ width: "auto", height: "auto" }}
               />
             </div>
             <div className="relative flex h-16 items-center justify-center">
@@ -134,7 +136,7 @@ export function Nav() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? "text-white bg-[#A8741A] rounded-lg" : "  ",
+                          item.current ? "text-white bg-[#FFA405] rounded-lg" : "  ",
                           " px-3 py-2 text-lg transition-colors duration-300 border-b-2 border-transparent hover:text-[#5B5D12] hover:border-yellow-600 "
                         )}
                         aria-current={item.current ? "page" : undefined}
