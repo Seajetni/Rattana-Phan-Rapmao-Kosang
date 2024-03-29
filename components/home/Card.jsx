@@ -7,7 +7,7 @@ export default function Card() {
       id: "1",
       name: "เกี่ยวกับเรา",
       details:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laboriosam debitis adipisci est rem dolorum voluptate ipsum quas animi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolor! Accusantium non tempore saepe quo, obcaecati harum officiis eveniet, molestias laborios?",
       img: "https://4kwallpapers.com/images/walls/thumbs_3t/15823.jpg",
     }, 
 
@@ -39,7 +39,7 @@ export default function Card() {
                   {item.name}
                 </p>
                 
-                <div className=" text-end  relative   items-end w-full flex flex-col  bottom-14 lg:bottom-16  group-hover:top-0 ">
+                <div className=" text-end  relative     items-end w-full flex flex-col  top-72 lg:top-72   ">
                   <p
        
                     className=" rounded-lg bg-[#FFA405] px-5 py-3 font-medium text-white sm:w-auto "
@@ -50,7 +50,7 @@ export default function Card() {
 
                 <div className="mt-32 sm:mt-48 lg:mt-64">
                   <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                    <p className="text-sm text-white">{item.details}</p>
+                    <p className="text-sm text-white w-3/4">{item.details}</p>
                   </div>
                 </div>
               </div>
