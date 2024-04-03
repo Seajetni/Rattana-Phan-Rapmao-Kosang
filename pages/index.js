@@ -8,7 +8,7 @@ import Form from "@/components/Form";
 
 export default function Home() {
 
-  const [slider, setSlider] = useState([]);
+
   
   // Define animation properties
   const sliderAnimation = useSpring({ 
@@ -32,17 +32,12 @@ export default function Home() {
     delay: 3000 // Delay for staggered animation
   });
 
-  useEffect(() => {
-    fetch('/api/slider')
-      .then((response) => response.json())
-      .then((data) => setSlider(data))
-      .catch((error) => console.error('Error fetching slider data:', error));
-  }, []);
+
 
   return (
     <Layout>
       <animated.div style={sliderAnimation}>
-        <Slider slider={slider}/>
+        <Slider />
       </animated.div>
 
       <animated.div style={cardAnimation}>

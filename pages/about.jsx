@@ -1,131 +1,78 @@
-
 import Layout from "@/components/Layout";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Slider from "@/components/Slider";
+import axios from "axios";
 
 export default function about() {
+  const [content, setContent] = useState(null);
 
-  const slider = [
-    {
-       img: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-   },
-   {
-     img: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-   },
-
-]
-
-  const content = [
-    {
-      id: "1",
-      img: "/1.png",
-      name: "จุดเริ่มต้นของความมั่งคั่งของธุรกิจ เกิดจาก",
-      title: "ความสัมพันธ์อันดีงามระหว่างคุณและลูกค้า",
-      detail:
-         ` Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic placeat
-        sint totam autem ipsum illo vitae sequi animi odio dolorem quas, porro
-        labore odit nam fugiat omnis corporis qui rem? Lorem ipsum dolor sit
-        amet consectetur, adipisicing elit. Possimus nisi, veniam voluptatem
-        nobis quisquam accusamus iure harum quia saepe quaerat tempore optio
-        molestiae molestias corrupti rerum itaque aperiam? Quae, eaque? Dicta
-        est modi, consequatur ut rerum molestias iure! Et tempore quae vitae
-        optio necessitatibus pariatur animi temporibus, asperiores doloribus
-        molestias placeat aliquid iste dolor, quo distinctio quibusdam quasi
-        alias aliquam! Suscipit deleniti officia non velit! Unde quaerat`,
-    },
-    {
-      id: "1",
-      img: "/1.png",
-      name: "จุดเริ่มต้นของความมั่งคั่งของธุรกิจ เกิดจาก",
-      title: "ความสัมพันธ์อันดีงามระหว่างคุณและลูกค้า",
-      detail:
-      ` Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic placeat
-     sint totam autem ipsum illo vitae sequi animi odio dolorem quas, porro
-     labore odit nam fugiat omnis corporis qui rem? Lorem ipsum dolor sit
-     amet consectetur, adipisicing elit. Possimus nisi, veniam voluptatem
-     nobis quisquam accusamus iure harum quia saepe quaerat tempore optio
-     molestiae molestias corrupti rerum itaque aperiam? Quae, eaque? Dicta
-     est modi, consequatur ut rerum molestias iure! Et tempore quae vitae
-     optio necessitatibus pariatur animi temporibus, asperiores doloribus
-     molestias placeat aliquid iste dolor, quo distinctio quibusdam quasi
-     alias aliquam! Suscipit deleniti officia non velit! Unde quaerat`,
-    },
-  ];
+  useEffect(() => {
+    if (!content) {
+      const data = async () => {
+        const res = await axios.get("/api/dataAbout?id=1");
+        setContent(res.data);
+      };
+      data();
+    }
+  }, [content]);
 
   return (
     <Layout>
-      <div  className="flex justify-center  mt-10">
-        <h1 className=" text-2xl text-[#A8741A]">เกี่ยวกับเรา</h1>
-      </div>
-
-      <div className=" mx-10 sm:mx-20 my-10">
-        <p className=" text-lg ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic placeat
-          sint totam autem ipsum illo vitae sequi animi odio dolorem quas, porro
-          labore odit nam fugiat omnis corporis qui rem? Lorem ipsum dolor sit
-          amet consectetur, adipisicing elit. Possimus nisi, veniam voluptatem
-          nobis quisquam accusamus iure harum quia saepe quaerat tempore optio
-          molestiae molestias corrupti rerum itaque aperiam? Quae, eaque? Dicta
-          est modi, consequatur ut rerum molestias iure! Et tempore quae vitae
-          optio necessitatibus pariatur animi temporibus, asperiores doloribus
-          molestias placeat aliquid iste dolor, quo distinctio quibusdam quasi
-          alias aliquam! Suscipit deleniti officia non velit! Unde quaerat
-        </p>
-      </div>
-
-      <Slider slider={slider} />
-
-      <div className="">
+      {content && (
         <div>
-          {content.map((item, index) => (
-            <div key={index} className="mx-auto max-w-screen-xl px-4 py-8  ">
-              <div className="  grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16  ">
-                <div
-                  className={`   shadow-2xl  relative h-64 overflow-hidden  rounded-3xl ${
-                    index % 2 === 1 ? "" : "lg:order-last "
-                  } sm:h-80 lg:h-full`}
-                >
-               <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/xyUmcRkQthk?si=8EWwVnGnLivIrbSm"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-        className={`w-full h-full ${ index % 2 === 1 ? "" : "hidden"}`}
-      ></iframe>
-      <div className=" flex justify-center items-center h-full w-full">
-        <Image
-        width={`${100000}`}
-        height={100}
-        src={item.img}
-        alt={item.name}
-        className={`w-full h-full  object-cover ${ index % 2 === 1 ? "hidden" : ""}`} />
-      </div>
+          <div className="flex justify-center  mt-10">
+            <h1 className=" text-2xl text-[#A8741A]">เกี่ยวกับเรา</h1>
+          </div>
+          <div className=" mx-10 sm:mx-20 my-10">
+            <p className=" text-lg ">{content.title}</p>
+          </div>
+          <Slider  />
+
+          <div className="">
+            <div>
+              <div className="mx-auto max-w-screen-xl px-4 py-8  ">
+                <div className="  grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16  ">
+                  <div className="lg:py-24">
+                    <h3 className="text-2xl  font-semibold sm:text-2xl text-[#A8741A]">
+                      {content.name}
+                    </h3>
+                    <p className="mt-4 ">{content.details}</p>
+                  </div>
+                  <div>
+                    <Image
+                      width={100}
+                      height={100}
+                      alt={content.name}
+                      src={content.img}
+                      className=" w-auto h-auto"
+                    />
+                  </div>
                 </div>
 
-                
+                <div className="  grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16  ">
+                  <div>
+                    <iframe
+                      className="h-full w-full rounded-lg"
+                      src={`https://www.youtube.com/embed/${content.video}`}
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
 
-                <div className="lg:py-24">
-                  <h3 className="text-2xl  font-semibold sm:text-2xl text-[#A8741A]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 ">{item.detail}</p>
+                  <div className="lg:py-24">
+                    <h3 className="text-2xl  font-semibold sm:text-2xl text-[#A8741A]">
+                      {content.name2}
+                    </h3>
+                    <p className="mt-4 ">{content.details2}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-
-
+      )}
     </Layout>
   );
 }
